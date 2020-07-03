@@ -48,18 +48,22 @@
             this.txtLicenseOwner = new DevExpress.XtraBars.BarStaticItem();
             this.lblTotalChannels = new DevExpress.XtraBars.BarHeaderItem();
             this.txtTotalChannels = new DevExpress.XtraBars.BarStaticItem();
-            this.txtUsedChannelsCount = new DevExpress.XtraBars.BarStaticItem();
             this.blTotalChannels = new DevExpress.XtraBars.BarStaticItem();
             this.lblUsedChannelsCount = new DevExpress.XtraBars.BarStaticItem();
             this.pageYoutube = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pageYoutubeMain = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageYoutubeSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.statusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.txtUsedChannelsCount = new DevExpress.XtraBars.BarStaticItem();
             this.txtLog = new DevExpress.XtraEditors.MemoEdit();
+            this.grdLog = new DevExpress.XtraGrid.GridControl();
+            this.viewLog = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLog.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewLog)).BeginInit();
             this.SuspendLayout();
             // 
             // backTask
@@ -88,7 +92,8 @@
             this.lblTotalChannels,
             this.txtTotalChannels,
             this.blTotalChannels,
-            this.lblUsedChannelsCount});
+            this.lblUsedChannelsCount,
+            this.ribbonControl.SearchEditItem});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 23;
             this.ribbonControl.Name = "ribbonControl";
@@ -105,13 +110,6 @@
             this.cbActiveUsersList,
             this.cbIsDebugger});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            // 
-            // 
-            // 
-            this.ribbonControl.SearchEditItem.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
-            this.ribbonControl.SearchEditItem.EditWidth = 150;
-            this.ribbonControl.SearchEditItem.Id = -5000;
-            this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl.Size = new System.Drawing.Size(722, 164);
             this.ribbonControl.StatusBar = this.statusBar;
@@ -195,8 +193,8 @@
             // 
             this.btnRemoteSupport.Hint = "Uzak Yardım";
             this.btnRemoteSupport.Id = 8;
-            this.btnRemoteSupport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnRemoteSupport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnRemoteSupport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoteSupport.ImageOptions.Image")));
+            this.btnRemoteSupport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRemoteSupport.ImageOptions.LargeImage")));
             this.btnRemoteSupport.Name = "btnRemoteSupport";
             // 
             // btnYTSettings
@@ -261,13 +259,6 @@
             this.txtTotalChannels.Id = 15;
             this.txtTotalChannels.Name = "txtTotalChannels";
             // 
-            // txtUsedChannelsCount
-            // 
-            this.txtUsedChannelsCount.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.txtUsedChannelsCount.Caption = "0";
-            this.txtUsedChannelsCount.Id = 18;
-            this.txtUsedChannelsCount.Name = "txtUsedChannelsCount";
-            // 
             // blTotalChannels
             // 
             this.blTotalChannels.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
@@ -319,6 +310,13 @@
             this.statusBar.Ribbon = this.ribbonControl;
             this.statusBar.Size = new System.Drawing.Size(722, 27);
             // 
+            // txtUsedChannelsCount
+            // 
+            this.txtUsedChannelsCount.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.txtUsedChannelsCount.Caption = "0";
+            this.txtUsedChannelsCount.Id = 18;
+            this.txtUsedChannelsCount.Name = "txtUsedChannelsCount";
+            // 
             // txtLog
             // 
             this.txtLog.Location = new System.Drawing.Point(0, 164);
@@ -329,14 +327,31 @@
             this.txtLog.Properties.Appearance.Options.UseBackColor = true;
             this.txtLog.Properties.Appearance.Options.UseFont = true;
             this.txtLog.Properties.Appearance.Options.UseForeColor = true;
-            this.txtLog.Size = new System.Drawing.Size(722, 266);
+            this.txtLog.Size = new System.Drawing.Size(722, 48);
             this.txtLog.TabIndex = 3;
+            // 
+            // grdLog
+            // 
+            this.grdLog.Location = new System.Drawing.Point(0, 218);
+            this.grdLog.MainView = this.viewLog;
+            this.grdLog.MenuManager = this.ribbonControl;
+            this.grdLog.Name = "grdLog";
+            this.grdLog.Size = new System.Drawing.Size(722, 209);
+            this.grdLog.TabIndex = 5;
+            this.grdLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.viewLog});
+            // 
+            // viewLog
+            // 
+            this.viewLog.GridControl = this.grdLog;
+            this.viewLog.Name = "viewLog";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 460);
+            this.Controls.Add(this.grdLog);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.ribbonControl);
@@ -353,6 +368,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLog.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,6 +403,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar statusBar;
         private DevExpress.XtraBars.BarStaticItem blTotalChannels;
         private DevExpress.XtraBars.BarStaticItem lblUsedChannelsCount;
+        private DevExpress.XtraGrid.GridControl grdLog;
+        private DevExpress.XtraGrid.Views.Grid.GridView viewLog;
     }
 }
 

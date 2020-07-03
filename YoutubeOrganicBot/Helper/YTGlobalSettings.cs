@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,5 +24,7 @@ namespace YoutubeOrganicBot.Helper
         public static string preCaption;
         public static string PROFILE_DIR = $"{Application.StartupPath}\\Profiles";
         public static string APP_DATA = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        public static DataTable preLogTable = new DataTable();
+        
     }
 }

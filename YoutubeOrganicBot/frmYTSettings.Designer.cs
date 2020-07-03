@@ -301,7 +301,7 @@
             // labelControl1
             // 
             this.labelControl1.AllowHtmlString = true;
-            this.labelControl1.Location = new System.Drawing.Point(2, 161);
+            this.labelControl1.Location = new System.Drawing.Point(8, 160);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(429, 13);
             this.labelControl1.TabIndex = 11;
