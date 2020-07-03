@@ -43,9 +43,10 @@ namespace YoutubeOrganicBot
                 Settings settingTime = JsonConvert.DeserializeObject<Settings>(strJson);
                 YTGlobalSettings.settingTime = settingTime;
             }
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             YTGlobalSettings.prelogData.Columns.Add(new DataColumn("Islem", typeof(string)));
             YTGlobalSettings.prelogData.Columns.Add(new DataColumn("KanalAdi", typeof(string)));
-            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("KanalUri", typeof(string)));            
+            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("KanalUri", typeof(string)));
             grdLog.DataSource = YTGlobalSettings.prelogData;
         }
 
@@ -193,7 +194,7 @@ namespace YoutubeOrganicBot
                     Founded = false;
                 }
             }
-            catch (Exception err) { /*LogManager.LogToFile(err.StackTrace);*/ }
+            catch (Exception) { /*LogManager.LogToFile(err.StackTrace);*/ }
             if ((bool)btnActiveDebug.EditValue)
             {
                 sw.Stop();
@@ -1073,7 +1074,9 @@ namespace YoutubeOrganicBot
             if (timeoutInSeconds > 0)
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+#pragma warning disable CS0618 // Type or member is obsolete
                 return wait.Until(ExpectedConditions.ElementToBeClickable(by));
+#pragma warning restore CS0618 // Type or member is obsolete
             }
             return driver.FindElement(by);
         }
