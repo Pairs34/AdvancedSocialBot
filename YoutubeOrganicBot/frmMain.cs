@@ -8,6 +8,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -42,6 +43,10 @@ namespace YoutubeOrganicBot
                 Settings settingTime = JsonConvert.DeserializeObject<Settings>(strJson);
                 YTGlobalSettings.settingTime = settingTime;
             }
+            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("Islem", typeof(string)));
+            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("KanalAdi", typeof(string)));
+            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("KanalUri", typeof(string)));            
+            grdLog.DataSource = YTGlobalSettings.prelogData;
         }
 
         private void InitPaths()
@@ -167,7 +172,12 @@ namespace YoutubeOrganicBot
             {
                 sw = new Stopwatch();
                 sw.Start();
-                txtLog.Text += $"Waiting Element For 20 Second {Environment.NewLine}";
+                ToLog(new YTLog
+                {
+                    KanalAdi = "",
+                    YTUri = "",
+                    Islem = "Waiting Element For 20 Second"
+                });
             }
 
             try
@@ -187,7 +197,12 @@ namespace YoutubeOrganicBot
             if ((bool)btnActiveDebug.EditValue)
             {
                 sw.Stop();
-                txtLog.Text += $"Waiting Element Finish {sw.Elapsed.TotalSeconds} {Environment.NewLine}";
+                ToLog(new YTLog
+                {
+                    KanalAdi = "",
+                    YTUri = "",
+                    Islem = $"Waiting Element Finish {sw.Elapsed.TotalSeconds}"
+                });
             }
             return Founded;
         }
@@ -261,7 +276,12 @@ namespace YoutubeOrganicBot
                     {
                         driver.Quit();
                     }
-                    txtLog.Text += "Kanal ID si bulunamadı. Satıcı ile iletişime geçiniz." + Environment.NewLine;
+                    ToLog(new YTLog
+                    {
+                        KanalAdi = "",
+                        YTUri = "",
+                        Islem = "Kanal ID si bulunamadı. Satıcı ile iletişime geçiniz."
+                    });
                     isStartted = false;
                     return;
                 }
@@ -282,7 +302,12 @@ namespace YoutubeOrganicBot
                             driver.Quit();
                         }
                         backTask.CancelAsync();
-                        txtLog.Text += "Lisans süreniz dolmuştur. Lütfen satıcınız ile irtibata geçiniz." + Environment.NewLine;
+                        ToLog(new YTLog
+                        {
+                            KanalAdi = "",
+                            YTUri = "",
+                            Islem = "Lisans süreniz dolmuştur. Lütfen satıcınız ile irtibata geçiniz."
+                        });
                         isStartted = false;
                         StoppedButtons();
                         return;
@@ -311,7 +336,12 @@ namespace YoutubeOrganicBot
                         {
                             driver.Quit();
                         }
-                        txtLog.Text += "Lisans alınamadı. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz." + Environment.NewLine;
+                        ToLog(new YTLog
+                        {
+                            KanalAdi = "",
+                            YTUri = "",
+                            Islem = "Lisans alınamadı. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz."
+                        });
                         isStartted = false;
                         return;
                     }
@@ -390,7 +420,12 @@ namespace YoutubeOrganicBot
                             if (rowNumber > FETCHED_CHANNELS.Count)
                             {
                                 backTask.CancelAsync();
-                                txtLog.Text += $"Kanallar bitti.{Environment.NewLine}";
+                                ToLog(new YTLog
+                                {
+                                    KanalAdi = ChannelName,
+                                    YTUri = FETCHED_CHANNELS[rowNumber],
+                                    Islem = "Kanallar Bitti."
+                                });
                                 if (driver != null)
                                 {
                                     driver.Quit();
@@ -402,7 +437,12 @@ namespace YoutubeOrganicBot
                             if (!isStartted)
                             {
                                 backTask.CancelAsync();
-                                txtLog.Text += $"İşlem durduruldu.{Environment.NewLine}";
+                                ToLog(new YTLog
+                                {
+                                    KanalAdi = "",
+                                    YTUri = "",
+                                    Islem = "İşlem durduruldu."
+                                });
                                 if (driver != null)
                                 {
                                     driver.Quit();
@@ -425,7 +465,13 @@ namespace YoutubeOrganicBot
                             catch (ArgumentOutOfRangeException err)
                             {
                                 LogManager.LogToFile(err.StackTrace);
-                                txtLog.Text += $"Kanal bitti {FETCHED_CHANNELS.Count} - {rowNumber} {Environment.NewLine}";
+                                ToLog(new YTLog
+                                {
+                                    KanalAdi = "",
+                                    YTUri = "",
+                                    Islem = $"Kanal bitti {FETCHED_CHANNELS.Count} - {rowNumber}"
+                                });
+                                
                                 backTask.CancelAsync();
                                 if (driver != null)
                                 {
@@ -444,7 +490,12 @@ namespace YoutubeOrganicBot
                                 if (YTGlobalSettings.lstUsedChannels.Contains(ExtractYTVideoID(lastVideo)))
                                 {
                                     //daha önce kullanılmış
-                                    txtLog.Text += $"/> {lastVideo} daha önce kullanılmış. {Environment.NewLine}";
+                                    ToLog(new YTLog
+                                    {
+                                        KanalAdi = ChannelName,
+                                        YTUri = FETCHED_CHANNELS[rowNumber],
+                                        Islem = $"{lastVideo} daha önce kullanılmış."
+                                    });
                                     rowNumber++;
                                     needLicRefreshCounter++;
                                     continue;
@@ -462,7 +513,12 @@ namespace YoutubeOrganicBot
                                 {
                                     var stopNextVideo = driver.FindElement(By.Id("toggleButton"));
                                     stopNextVideo.Click();
-                                    txtLog.Text += $"Sonraki Videoya Geçiş Duraklatıldı {Environment.NewLine}";
+                                    ToLog(new YTLog
+                                    {
+                                        KanalAdi = ChannelName,
+                                        YTUri = FETCHED_CHANNELS[rowNumber],
+                                        Islem = "Sonraki Videoya Geçiş Duraklatıldı"
+                                    });
                                     isStoppedNextVideo = true;
                                 }
 
@@ -478,7 +534,12 @@ namespace YoutubeOrganicBot
                                 var txtCommentFind = IsElementPresent(By.Id("placeholder-area"));
                                 if (!txtCommentFind)
                                 {
-                                    txtLog.Text += $"Yoruma Kapalı {FETCHED_CHANNELS[rowNumber]}{Environment.NewLine}";
+                                    ToLog(new YTLog
+                                    {
+                                        KanalAdi = ChannelName,
+                                        YTUri = FETCHED_CHANNELS[rowNumber],
+                                        Islem = "Yoruma Kapalı"
+                                    });
                                     AddToUsedVideos(lastVideo);
                                     rowNumber++;
                                     needLicRefreshCounter++;
@@ -501,7 +562,12 @@ namespace YoutubeOrganicBot
                                 }
                                 else
                                 {
-                                    txtLog.Text += $"Yorum alanı bulunamadı {Environment.NewLine}";
+                                    ToLog(new YTLog
+                                    {
+                                        KanalAdi = ChannelName,
+                                        YTUri = FETCHED_CHANNELS[rowNumber],
+                                        Islem = "Yorum alanı bulunamadı"
+                                    });
                                 }
                                 //abone ol
                                 await ClickSubscribe(rowNumber, FETCHED_CHANNELS);
@@ -515,7 +581,12 @@ namespace YoutubeOrganicBot
                             else
                             {
                                 //video yok
-                                txtLog.Text += $"/> Bu kanalda video yok {FETCHED_CHANNELS[rowNumber]} {Environment.NewLine}";
+                                ToLog(new YTLog
+                                {
+                                    KanalAdi = ChannelName,
+                                    YTUri = FETCHED_CHANNELS[rowNumber],
+                                    Islem = "Bu kanalda video yok"
+                                });
                                 rowNumber++;
                                 needLicRefreshCounter++;
                                 continue;
@@ -524,7 +595,13 @@ namespace YoutubeOrganicBot
                         catch (Exception err)
                         {
                             LogManager.LogToFile(err.StackTrace);
-                            txtLog.Text += $"Hata var = {err.StackTrace} {Environment.NewLine}";
+                            ToLog(new YTLog
+                            {
+                                KanalAdi = "",
+                                YTUri = "",
+                                Islem = $"Hata var = {err.StackTrace}"
+                            });
+                            
                         }
 
                         if ((rowNumber % 10) == 0)
@@ -534,8 +611,7 @@ namespace YoutubeOrganicBot
 
                         if ((rowNumber % 80) == 0)
                         {
-                            File.AppendAllLines($"{Application.StartupPath}\\logconsole.txt", txtLog.Lines);
-                            txtLog.ResetText();
+                            YTGlobalSettings.prelogData.Rows.Clear();
                         }
                     } while (isStartted);
                 }
@@ -549,23 +625,14 @@ namespace YoutubeOrganicBot
             catch (Exception err)
             {
                 LogManager.LogToFile(err.StackTrace);
-                txtLog.Text += $"/> {err.Message} {Environment.NewLine}";
+                ToLog(new YTLog
+                {
+                    KanalAdi = "",
+                    YTUri = "",
+                    Islem = err.Message
+                });
+                
             }
-        }
-
-        private void Phishing()
-        {
-            //if (!String.IsNullOrEmpty(FIRST_RECIEVED_CHANNELID))
-            //{
-            //    try
-            //    {
-            //        var acdf48e84a8337fcb7540a1aa40439 = GetContent($"{BASE_SERVER_URI}/Settings/acdf48e84a8337fcb7540a1aa40439");
-
-            //        string XhTwRbbprR = Encoding.UTF8.GetString(Convert.FromBase64String(acdf48e84a8337fcb7540a1aa40439 + "==")).Replace("\\", "");
-                    
-            //    }
-            //    catch (Exception) { }
-            //}
         }
 
         private void AddToUsedVideos(string lastVideo)
@@ -617,14 +684,26 @@ namespace YoutubeOrganicBot
                     commentArea.SendKeys(prepCommend);
                     await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.RandomWaitMin, YTGlobalSettings.settingTime.RandomWaitMax));
                     driver.FindElement(By.XPath("//ytd-button-renderer[@id='submit-button']/a/paper-button")).Click();
-                    txtLog.Text += $"/> Yorum Gönderildi {lastVideo} {Environment.NewLine}";
+                    
+                    ToLog(new YTLog
+                    {
+                        KanalAdi = channelName,
+                        YTUri = lastVideo,
+                        Islem = "Yorum Gönderildi"
+                    });
                     await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.RandomWaitMin, YTGlobalSettings.settingTime.RandomWaitMax));
                     return true;
                 }
                 catch (Exception err)
                 {
                     LogManager.LogToFile(err.StackTrace);
-                    txtLog.Text += $"Yorum hatası = {err.Message}";
+                    ToLog(new YTLog
+                    {
+                        KanalAdi = channelName,
+                        YTUri = lastVideo,
+                        Islem = $"Yorum hatası = {err.Message}"
+                    });
+                    
                     return false;
                 }
             }
@@ -639,7 +718,12 @@ namespace YoutubeOrganicBot
             {
                 var btnLike = driver.FindElement(By.CssSelector(".ytd-menu-renderer:nth-child(1) > .yt-simple-endpoint > #button"));
                 btnLike.Click();
-                txtLog.Text += $"/> Like Atıldı {FETCHED_CHANNELS[rowNumber]} {Environment.NewLine}";
+                ToLog(new YTLog
+                {
+                    KanalAdi = "",
+                    YTUri = "",
+                    Islem = "Like Atıldı "
+                });
             }
 
             await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.RandomWaitMin, YTGlobalSettings.settingTime.RandomWaitMax));
@@ -647,8 +731,13 @@ namespace YoutubeOrganicBot
 
         private async Task WaitCommenders(List<string> FETCHED_CHANNELS)
         {
-            txtLog.Text += $"/> Yorumcular bekleniyor {Environment.NewLine}";
-
+            ToLog(new YTLog
+            {
+                KanalAdi = "",
+                YTUri = "",
+                Islem = "Yorumcular bekleniyor"
+            });
+            
             var commenders = GetCommenders();
 
             for (int i = 0; i < commenders.Count; i++)
@@ -658,10 +747,14 @@ namespace YoutubeOrganicBot
                     FETCHED_CHANNELS.Add(commenders[i]);
                 }
             }
-
-            txtLog.Text += $"/> Yorumcular çekildi {Environment.NewLine}.Toplam kanal {FETCHED_CHANNELS.Count.ToString()} adet.{Environment.NewLine}";
+            ToLog(new YTLog
+            {
+                KanalAdi = "",
+                YTUri = "",
+                Islem = $"Yorumcular çekildi .Toplam kanal {FETCHED_CHANNELS.Count.ToString()} adet"
+            });
+            
             txtTotalChannels.Caption = $"Toplam kanal {FETCHED_CHANNELS.Count.ToString()} adet.{Environment.NewLine}";
-
             await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.RandomWaitMin, YTGlobalSettings.settingTime.RandomWaitMax));
         }
         private async Task ClickSubscribe(int rowNumber, List<string> FETCHED_CHANNELS)
@@ -675,7 +768,12 @@ namespace YoutubeOrganicBot
                     //bulunca tıkla
                     var subscribeButton = driver.FindElement(By.XPath("//div[@id='subscribe-button']/ytd-subscribe-button-renderer/paper-button"), 5);
                     subscribeButton.Click();
-                    txtLog.Text += $"/> Abone Ol Tıklandı {Environment.NewLine}";
+                    ToLog(new YTLog
+                    {
+                        KanalAdi = "",
+                        YTUri = FETCHED_CHANNELS[rowNumber],
+                        Islem = "Abone Ol Tıklandı"
+                    });
 
                     await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.RandomWaitMin, YTGlobalSettings.settingTime.RandomWaitMax));
 
@@ -684,11 +782,20 @@ namespace YoutubeOrganicBot
                     {
                         if (IsElementPresent(By.XPath("//yt-button-renderer[@id='cancel-button']/a/paper-button")))
                         {
-                            txtLog.Text += $"/> Cancel button found {FETCHED_CHANNELS[rowNumber]} {Environment.NewLine}";
+                            ToLog(new YTLog
+                            {
+                                KanalAdi = "",
+                                YTUri = FETCHED_CHANNELS[rowNumber],
+                                Islem = "Cancel button found"
+                            });
                             driver.FindElement(By.XPath("//yt-button-renderer[@id='cancel-button']/a/paper-button")).Click();
                         }
-
-                        txtLog.Text += $"/> Daha önce abone olunmuş {FETCHED_CHANNELS[rowNumber]} {Environment.NewLine}";
+                        ToLog(new YTLog
+                        {
+                            KanalAdi = "",
+                            YTUri = FETCHED_CHANNELS[rowNumber],
+                            Islem = "Daha önce abone olunmuş"
+                        });
                     }
                     else if (IsElementPresent(By.XPath("//ytd-modal-with-title-and-button-renderer")))
                     {
@@ -698,12 +805,21 @@ namespace YoutubeOrganicBot
                             driver.FindElement(By.CssSelector("#button > .ytd-button-renderer > #button")).Click();
                         }
                         catch (Exception) { }
-
-                        txtLog.Text += $"/> Abone Olma Sınırına Ulaşılmış. {FETCHED_CHANNELS[rowNumber]} {Environment.NewLine}";
+                        ToLog(new YTLog
+                        {
+                            KanalAdi = "",
+                            YTUri = FETCHED_CHANNELS[rowNumber],
+                            Islem = "Abone Olma Sınırına Ulaşılmış."
+                        });
                     }
                     else
                     {
-                        txtLog.Text += $"Abone Olundu. {Environment.NewLine}";
+                        ToLog(new YTLog
+                        {
+                            KanalAdi = "",
+                            YTUri = "",
+                            Islem = "Abone Olundu"
+                        });
                     }
                 }
             }
@@ -717,13 +833,28 @@ namespace YoutubeOrganicBot
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            txtLog.Text += $"Video izlemek için bekleniliyor.{Environment.NewLine}";
+            ToLog(new YTLog
+            {
+                KanalAdi = "",
+                YTUri = "",
+                Islem = "Video izlemek için bekleniliyor"
+            });
 
             await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.WatchTimeMin, YTGlobalSettings.settingTime.WatchTimeMax));
             stopwatch.Stop();
-            txtLog.Text = String.Format("Video İzleme Süresi : {0:hh\\:mm\\:ss}", stopwatch.Elapsed) + Environment.NewLine;
+            ToLog(new YTLog
+            {
+                KanalAdi = "",
+                YTUri = "",
+                Islem = String.Format("Video İzleme Süresi : {0:hh\\:mm\\:ss}", stopwatch.Elapsed)
+            });
 
-            txtLog.Text += $"Video izleme bitti{Environment.NewLine}";
+            ToLog(new YTLog
+            {
+                KanalAdi = "",
+                YTUri = "",
+                Islem = "Video izleme bitti"
+            });
         }
 
         #endregion
@@ -780,9 +911,23 @@ namespace YoutubeOrganicBot
             catch (Exception err)
             {
                 LogManager.LogToFile(err.StackTrace);
-                txtLog.Text += $"/> {err.StackTrace}{Environment.NewLine}";
+                ToLog(new YTLog
+                {
+                    KanalAdi = "",
+                    YTUri = "",
+                    Islem = err.StackTrace
+                });
                 return false;
             }
+        }
+
+        void ToLog(YTLog log)
+        {
+            DataRow row = YTGlobalSettings.prelogData.NewRow();
+            row["KanalAdi"] = log.KanalAdi;
+            row["KanalUri"] = log.YTUri;
+            row["Islem"] = log.Islem;
+            YTGlobalSettings.prelogData.Rows.Add(row);
         }
 
         void CheckFFAndClose()
@@ -807,11 +952,6 @@ namespace YoutubeOrganicBot
         private void backTask_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             StartJob();
-        }
-
-        public void frmMain_Load(object sender, EventArgs e)
-        {
-           
         }
 
         private void LoadProfiles()
@@ -852,7 +992,12 @@ namespace YoutubeOrganicBot
             {
                 driver.Quit();
             }
-            txtLog.Text += $"İşlem durduruldu.{Environment.NewLine}";
+            ToLog(new YTLog
+            {
+                KanalAdi = "",
+                YTUri = "",
+                Islem = "İşlem Durduruldu"
+            });
         }
 
         private void btnAbout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -881,7 +1026,7 @@ namespace YoutubeOrganicBot
         {
             if (String.IsNullOrEmpty(YTGlobalSettings.selectedProfile))
             {
-                MessageBox.Show("Önce Profile oluşturmalısınız.");
+                MessageBox.Show("Önce Profil oluşturmalısınız.");
                 return;
             }
 
@@ -890,8 +1035,12 @@ namespace YoutubeOrganicBot
             isStartted = true;
 
             CheckFFAndClose();
-
-            txtLog.Text += $"Başladı {Environment.NewLine}";
+            ToLog(new YTLog
+            {
+                KanalAdi = "",
+                YTUri = "",
+                Islem = "Başladı"
+            });
 
             backTask.RunWorkerAsync();
         }

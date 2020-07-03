@@ -24,7 +24,6 @@ namespace YoutubeOrganicBot.Helper
         public static string preCaption;
         public static string PROFILE_DIR = $"{Application.StartupPath}\\Profiles";
         public static string APP_DATA = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        public static DataTable preLogTable = new DataTable();
-        
+        public static DataTable prelogData = new DataTable();        
     }
 }

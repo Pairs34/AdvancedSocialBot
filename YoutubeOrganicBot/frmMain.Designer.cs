@@ -55,13 +55,11 @@
             this.pageYoutubeSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.statusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.txtUsedChannelsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.txtLog = new DevExpress.XtraEditors.MemoEdit();
             this.grdLog = new DevExpress.XtraGrid.GridControl();
             this.viewLog = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLog.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewLog)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +74,7 @@
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
+            this.ribbonControl.SearchEditItem,
             this.btnProfileManager,
             this.btnStartJob,
             this.btnStopJob,
@@ -92,8 +91,7 @@
             this.lblTotalChannels,
             this.txtTotalChannels,
             this.blTotalChannels,
-            this.lblUsedChannelsCount,
-            this.ribbonControl.SearchEditItem});
+            this.lblUsedChannelsCount});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 23;
             this.ribbonControl.Name = "ribbonControl";
@@ -317,26 +315,14 @@
             this.txtUsedChannelsCount.Id = 18;
             this.txtUsedChannelsCount.Name = "txtUsedChannelsCount";
             // 
-            // txtLog
-            // 
-            this.txtLog.Location = new System.Drawing.Point(0, 164);
-            this.txtLog.Name = "txtLog";
-            this.txtLog.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtLog.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtLog.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.txtLog.Properties.Appearance.Options.UseBackColor = true;
-            this.txtLog.Properties.Appearance.Options.UseFont = true;
-            this.txtLog.Properties.Appearance.Options.UseForeColor = true;
-            this.txtLog.Size = new System.Drawing.Size(722, 48);
-            this.txtLog.TabIndex = 3;
-            // 
             // grdLog
             // 
-            this.grdLog.Location = new System.Drawing.Point(0, 218);
+            this.grdLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdLog.Location = new System.Drawing.Point(0, 164);
             this.grdLog.MainView = this.viewLog;
             this.grdLog.MenuManager = this.ribbonControl;
             this.grdLog.Name = "grdLog";
-            this.grdLog.Size = new System.Drawing.Size(722, 209);
+            this.grdLog.Size = new System.Drawing.Size(722, 269);
             this.grdLog.TabIndex = 5;
             this.grdLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.viewLog});
@@ -345,6 +331,8 @@
             // 
             this.viewLog.GridControl = this.grdLog;
             this.viewLog.Name = "viewLog";
+            this.viewLog.OptionsBehavior.Editable = false;
+            this.viewLog.OptionsView.ShowGroupPanel = false;
             // 
             // frmMain
             // 
@@ -353,7 +341,6 @@
             this.ClientSize = new System.Drawing.Size(722, 460);
             this.Controls.Add(this.grdLog);
             this.Controls.Add(this.statusBar);
-            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.ribbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::YoutubeOrganicBot.Properties.Resources.youtube_512px;
@@ -367,7 +354,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLog.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewLog)).EndInit();
             this.ResumeLayout(false);
@@ -391,7 +377,6 @@
         private DevExpress.XtraBars.BarButtonItem btnInitActiveUser;
         private DevExpress.XtraBars.BarButtonItem btnRemoteSupport;
         private DevExpress.XtraBars.BarButtonItem btnYTSettings;
-        private DevExpress.XtraEditors.MemoEdit txtLog;
         private DevExpress.XtraBars.BarButtonItem btnViewLicenseInfo;
         private DevExpress.XtraBars.BarEditItem btnActiveDebug;
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch cbIsDebugger;

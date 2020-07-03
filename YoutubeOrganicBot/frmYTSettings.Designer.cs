@@ -420,6 +420,7 @@
             this.lstUsedChannel.Name = "lstUsedChannel";
             this.lstUsedChannel.Size = new System.Drawing.Size(652, 255);
             this.lstUsedChannel.TabIndex = 2;
+            this.lstUsedChannel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstUsedChannel_KeyDown);
             // 
             // btnSaveYTSettings
             // 

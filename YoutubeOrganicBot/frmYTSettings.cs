@@ -233,5 +233,16 @@ namespace YoutubeOrganicBot
                 }
             }
         }
+
+        private void lstUsedChannel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == System.Windows.Forms.Keys.Delete)
+            {
+                if (lstUsedChannel.SelectedIndex >= 0)
+                {
+                    lstUsedChannel.Items.RemoveAt(lstUsedChannel.SelectedIndex);
+                }
+            }
+        }
     }
 }
