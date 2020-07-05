@@ -43,11 +43,6 @@ namespace YoutubeOrganicBot
                 Settings settingTime = JsonConvert.DeserializeObject<Settings>(strJson);
                 YTGlobalSettings.settingTime = settingTime;
             }
-            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
-            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("Islem", typeof(string)));
-            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("KanalAdi", typeof(string)));
-            YTGlobalSettings.prelogData.Columns.Add(new DataColumn("KanalUri", typeof(string)));
-            grdLog.DataSource = YTGlobalSettings.prelogData;
         }
 
         private void InitPaths()
@@ -169,7 +164,7 @@ namespace YoutubeOrganicBot
         {
             bool Founded = false;
             Stopwatch sw = null;
-            if ((bool)btnActiveDebug.EditValue)
+            if (btnActiveDebug.EditValue != null)
             {
                 sw = new Stopwatch();
                 sw.Start();
@@ -195,7 +190,7 @@ namespace YoutubeOrganicBot
                 }
             }
             catch (Exception) { /*LogManager.LogToFile(err.StackTrace);*/ }
-            if ((bool)btnActiveDebug.EditValue)
+            if (btnActiveDebug.EditValue != null)
             {
                 sw.Stop();
                 ToLog(new YTLog
@@ -612,7 +607,7 @@ namespace YoutubeOrganicBot
 
                         if ((rowNumber % 80) == 0)
                         {
-                            YTGlobalSettings.prelogData.Rows.Clear();
+                            lstLog.Items.Clear();
                         }
                     } while (isStartted);
                 }
@@ -923,12 +918,12 @@ namespace YoutubeOrganicBot
         }
 
         void ToLog(YTLog log)
-        {
-            DataRow row = YTGlobalSettings.prelogData.NewRow();
-            row["KanalAdi"] = log.KanalAdi;
-            row["KanalUri"] = log.YTUri;
-            row["Islem"] = log.Islem;
-            YTGlobalSettings.prelogData.Rows.Add(row);
+        {            
+            ListViewItem lstItem = new ListViewItem();
+            lstItem.Text = log.Islem;
+            lstItem.SubItems.Add(log.KanalAdi);
+            lstItem.SubItems.Add(log.YTUri);
+            lstLog.Items.Add(lstItem);
         }
 
         void CheckFFAndClose()

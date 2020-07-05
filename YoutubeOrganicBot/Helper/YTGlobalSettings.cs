@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace YoutubeOrganicBot.Helper
@@ -23,7 +19,6 @@ namespace YoutubeOrganicBot.Helper
         public static Settings settingTime;
         public static string preCaption;
         public static string PROFILE_DIR = $"{Application.StartupPath}\\Profiles";
-        public static string APP_DATA = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        public static DataTable prelogData = new DataTable();        
+        public static string APP_DATA = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);   
     }
 }

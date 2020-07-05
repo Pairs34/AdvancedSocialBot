@@ -55,13 +55,13 @@
             this.pageYoutubeSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.statusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.txtUsedChannelsCount = new DevExpress.XtraBars.BarStaticItem();
-            this.grdLog = new DevExpress.XtraGrid.GridControl();
-            this.viewLog = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lstLog = new System.Windows.Forms.ListView();
+            this.clAction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clChannel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clYTUri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdLog)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewLog)).BeginInit();
             this.SuspendLayout();
             // 
             // backTask
@@ -315,31 +315,42 @@
             this.txtUsedChannelsCount.Id = 18;
             this.txtUsedChannelsCount.Name = "txtUsedChannelsCount";
             // 
-            // grdLog
+            // lstLog
             // 
-            this.grdLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdLog.Location = new System.Drawing.Point(0, 164);
-            this.grdLog.MainView = this.viewLog;
-            this.grdLog.MenuManager = this.ribbonControl;
-            this.grdLog.Name = "grdLog";
-            this.grdLog.Size = new System.Drawing.Size(722, 269);
-            this.grdLog.TabIndex = 5;
-            this.grdLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.viewLog});
+            this.lstLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clAction,
+            this.clChannel,
+            this.clYTUri});
+            this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstLog.HideSelection = false;
+            this.lstLog.Location = new System.Drawing.Point(0, 164);
+            this.lstLog.Name = "lstLog";
+            this.lstLog.Size = new System.Drawing.Size(722, 269);
+            this.lstLog.TabIndex = 8;
+            this.lstLog.UseCompatibleStateImageBehavior = false;
+            this.lstLog.View = System.Windows.Forms.View.Details;
             // 
-            // viewLog
+            // clAction
             // 
-            this.viewLog.GridControl = this.grdLog;
-            this.viewLog.Name = "viewLog";
-            this.viewLog.OptionsBehavior.Editable = false;
-            this.viewLog.OptionsView.ShowGroupPanel = false;
+            this.clAction.Text = "İşlem";
+            this.clAction.Width = 368;
+            // 
+            // clChannel
+            // 
+            this.clChannel.Text = "Kanal Adı";
+            this.clChannel.Width = 123;
+            // 
+            // clYTUri
+            // 
+            this.clYTUri.Text = "YT Uri";
+            this.clYTUri.Width = 213;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 460);
-            this.Controls.Add(this.grdLog);
+            this.Controls.Add(this.lstLog);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.ribbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -354,8 +365,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdLog)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,8 +397,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar statusBar;
         private DevExpress.XtraBars.BarStaticItem blTotalChannels;
         private DevExpress.XtraBars.BarStaticItem lblUsedChannelsCount;
-        private DevExpress.XtraGrid.GridControl grdLog;
-        private DevExpress.XtraGrid.Views.Grid.GridView viewLog;
+        private System.Windows.Forms.ListView lstLog;
+        private System.Windows.Forms.ColumnHeader clAction;
+        private System.Windows.Forms.ColumnHeader clChannel;
+        private System.Windows.Forms.ColumnHeader clYTUri;
     }
 }
 
