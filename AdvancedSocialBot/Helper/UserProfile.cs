@@ -1,4 +1,4 @@
-﻿namespace YoutubeOrganicBot.Helper
+﻿namespace AdvancedSocialBot.Helper
 {
     class UserProfile
     {

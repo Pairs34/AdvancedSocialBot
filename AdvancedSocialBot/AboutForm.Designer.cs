@@ -1,4 +1,4 @@
-﻿namespace YoutubeOrganicBot
+﻿namespace AdvancedSocialBot
 {
     partial class AboutForm
     {
@@ -34,11 +34,11 @@
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelCopyright = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mailLink = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.picMail = new DevExpress.XtraEditors.PictureEdit();
             this.telegramLink = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.okButton = new System.Windows.Forms.Button();
-            this.mailLink = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,7 +73,7 @@
             // logoPictureBox
             // 
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = global::YoutubeOrganicBot.Properties.Resources.youtube_512px;
+            this.logoPictureBox.Image = global::AdvancedSocialBot.Properties.Resources.youtube_512px;
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
@@ -130,9 +130,18 @@
             this.panel1.Size = new System.Drawing.Size(274, 150);
             this.panel1.TabIndex = 27;
             // 
+            // mailLink
+            // 
+            this.mailLink.Location = new System.Drawing.Point(72, 44);
+            this.mailLink.Name = "mailLink";
+            this.mailLink.Size = new System.Drawing.Size(116, 13);
+            this.mailLink.TabIndex = 30;
+            this.mailLink.Text = "a.yldrm@outlook.com.tr";
+            this.mailLink.Click += new System.EventHandler(this.mailLink_Click);
+            // 
             // pictureEdit2
             // 
-            this.pictureEdit2.EditValue = global::YoutubeOrganicBot.Properties.Resources.icons8_telegram_app_48;
+            this.pictureEdit2.EditValue = global::AdvancedSocialBot.Properties.Resources.icons8_telegram_app_48;
             this.pictureEdit2.Location = new System.Drawing.Point(15, 74);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.AllowFocused = false;
@@ -184,15 +193,6 @@
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&Kapat";
             // 
-            // mailLink
-            // 
-            this.mailLink.Location = new System.Drawing.Point(72, 44);
-            this.mailLink.Name = "mailLink";
-            this.mailLink.Size = new System.Drawing.Size(116, 13);
-            this.mailLink.TabIndex = 30;
-            this.mailLink.Text = "a.yldrm@outlook.com.tr";
-            this.mailLink.Click += new System.EventHandler(this.mailLink_Click);
-            // 
             // AboutForm
             // 
             this.AcceptButton = this.okButton;
@@ -201,11 +201,11 @@
             this.ClientSize = new System.Drawing.Size(435, 283);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.Padding = new System.Windows.Forms.Padding(9);
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AboutForm";

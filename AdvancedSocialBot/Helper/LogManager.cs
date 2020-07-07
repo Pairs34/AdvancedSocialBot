@@ -1,7 +1,7 @@
 ﻿using Serilog;
 using Serilog.Core;
 
-namespace YoutubeOrganicBot.Helper
+namespace AdvancedSocialBot.Helper
 {
     public static class LogManager
     {

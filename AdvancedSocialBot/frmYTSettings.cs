@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Newtonsoft.Json;
 using System.IO;
-using YoutubeOrganicBot.Helper;
+using AdvancedSocialBot.Helper;
 using Newtonsoft.Json.Linq;
 using System.Net;
 
-namespace YoutubeOrganicBot
+namespace AdvancedSocialBot
 {
     public partial class frmYTSettings : DevExpress.XtraEditors.XtraForm
     {       

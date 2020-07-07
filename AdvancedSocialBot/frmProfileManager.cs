@@ -8,11 +8,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using YoutubeOrganicBot.Helper;
+using AdvancedSocialBot.Helper;
 
-namespace YoutubeOrganicBot
+namespace AdvancedSocialBot
 {
-    public partial class frmProfileManager : Form
+    public partial class frmProfileManager : DevExpress.XtraEditors.XtraForm
     {
 
         public frmProfileManager()

@@ -1,4 +1,4 @@
-﻿namespace YoutubeOrganicBot
+﻿namespace AdvancedSocialBot
 {
     partial class frmMain
     {
@@ -41,7 +41,6 @@
             this.btnInitActiveUser = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemoteSupport = new DevExpress.XtraBars.BarButtonItem();
             this.btnYTSettings = new DevExpress.XtraBars.BarButtonItem();
-            this.btnViewLicenseInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnActiveDebug = new DevExpress.XtraBars.BarEditItem();
             this.cbIsDebugger = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
             this.lblLicenseOwner = new DevExpress.XtraBars.BarHeaderItem();
@@ -59,6 +58,12 @@
             this.clAction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clChannel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clYTUri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.txtLicenseDetail = new DevExpress.XtraBars.BarHeaderItem();
+            this.rbOtherYTTools = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).BeginInit();
@@ -84,18 +89,21 @@
             this.btnInitActiveUser,
             this.btnRemoteSupport,
             this.btnYTSettings,
-            this.btnViewLicenseInfo,
             this.btnActiveDebug,
             this.lblLicenseOwner,
             this.txtLicenseOwner,
             this.lblTotalChannels,
             this.txtTotalChannels,
             this.blTotalChannels,
-            this.lblUsedChannelsCount});
+            this.lblUsedChannelsCount,
+            this.txtLicenseDetail,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 23;
+            this.ribbonControl.MaxItemId = 28;
             this.ribbonControl.Name = "ribbonControl";
-            this.ribbonControl.PageHeaderItemLinks.Add(this.btnViewLicenseInfo);
+            this.ribbonControl.PageHeaderItemLinks.Add(this.txtLicenseDetail);
             this.ribbonControl.PageHeaderItemLinks.Add(this.btnActiveDebug);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.pageYoutube});
@@ -109,7 +117,7 @@
             this.cbIsDebugger});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(722, 164);
+            this.ribbonControl.Size = new System.Drawing.Size(724, 164);
             this.ribbonControl.StatusBar = this.statusBar;
             // 
             // btnProfileManager
@@ -203,13 +211,6 @@
             this.btnYTSettings.Name = "btnYTSettings";
             this.btnYTSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYTSettings_ItemClick);
             // 
-            // btnViewLicenseInfo
-            // 
-            this.btnViewLicenseInfo.Id = 10;
-            this.btnViewLicenseInfo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnViewLicenseInfo.ImageOptions.Image")));
-            this.btnViewLicenseInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnViewLicenseInfo.ImageOptions.LargeImage")));
-            this.btnViewLicenseInfo.Name = "btnViewLicenseInfo";
-            // 
             // btnActiveDebug
             // 
             this.btnActiveDebug.Caption = "Hata Ayıklama";
@@ -275,7 +276,8 @@
             // 
             this.pageYoutube.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.pageYoutubeMain,
-            this.pageYoutubeSettings});
+            this.pageYoutubeSettings,
+            this.rbOtherYTTools});
             this.pageYoutube.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pageYoutube.ImageOptions.Image")));
             this.pageYoutube.Name = "pageYoutube";
             this.pageYoutube.Text = "Youtube";
@@ -303,10 +305,10 @@
             this.statusBar.ItemLinks.Add(this.txtTotalChannels);
             this.statusBar.ItemLinks.Add(this.lblUsedChannelsCount);
             this.statusBar.ItemLinks.Add(this.txtUsedChannelsCount);
-            this.statusBar.Location = new System.Drawing.Point(0, 433);
+            this.statusBar.Location = new System.Drawing.Point(0, 465);
             this.statusBar.Name = "statusBar";
             this.statusBar.Ribbon = this.ribbonControl;
-            this.statusBar.Size = new System.Drawing.Size(722, 27);
+            this.statusBar.Size = new System.Drawing.Size(724, 27);
             // 
             // txtUsedChannelsCount
             // 
@@ -325,7 +327,7 @@
             this.lstLog.HideSelection = false;
             this.lstLog.Location = new System.Drawing.Point(0, 164);
             this.lstLog.Name = "lstLog";
-            this.lstLog.Size = new System.Drawing.Size(722, 269);
+            this.lstLog.Size = new System.Drawing.Size(724, 301);
             this.lstLog.TabIndex = 8;
             this.lstLog.UseCompatibleStateImageBehavior = false;
             this.lstLog.View = System.Windows.Forms.View.Details;
@@ -345,16 +347,68 @@
             this.clYTUri.Text = "YT Uri";
             this.clYTUri.Width = 213;
             // 
+            // fluentDesignFormContainer1
+            // 
+            this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 164);
+            this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(724, 328);
+            this.fluentDesignFormContainer1.TabIndex = 11;
+            // 
+            // txtLicenseDetail
+            // 
+            this.txtLicenseDetail.Caption = "...";
+            this.txtLicenseDetail.Id = 23;
+            this.txtLicenseDetail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.Image")));
+            this.txtLicenseDetail.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.LargeImage")));
+            this.txtLicenseDetail.Name = "txtLicenseDetail";
+            // 
+            // rbOtherYTTools
+            // 
+            this.rbOtherYTTools.ItemLinks.Add(this.barButtonItem1);
+            this.rbOtherYTTools.ItemLinks.Add(this.barButtonItem2);
+            this.rbOtherYTTools.ItemLinks.Add(this.barButtonItem3);
+            this.rbOtherYTTools.Name = "rbOtherYTTools";
+            this.rbOtherYTTools.Text = "Diğer YT Araçları";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "UnFollower";
+            this.barButtonItem1.Enabled = false;
+            this.barButtonItem1.Id = 24;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Youtube Watcher";
+            this.barButtonItem2.Enabled = false;
+            this.barButtonItem2.Id = 25;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Video Manager";
+            this.barButtonItem3.Enabled = false;
+            this.barButtonItem3.Id = 26;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 460);
+            this.ClientSize = new System.Drawing.Size(724, 492);
             this.Controls.Add(this.lstLog);
             this.Controls.Add(this.statusBar);
+            this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.ribbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Image = global::YoutubeOrganicBot.Properties.Resources.youtube_512px;
+            this.IconOptions.Image = global::AdvancedSocialBot.Properties.Resources.youtube_512px;
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl;
@@ -386,7 +440,6 @@
         private DevExpress.XtraBars.BarButtonItem btnInitActiveUser;
         private DevExpress.XtraBars.BarButtonItem btnRemoteSupport;
         private DevExpress.XtraBars.BarButtonItem btnYTSettings;
-        private DevExpress.XtraBars.BarButtonItem btnViewLicenseInfo;
         private DevExpress.XtraBars.BarEditItem btnActiveDebug;
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch cbIsDebugger;
         private DevExpress.XtraBars.BarHeaderItem lblLicenseOwner;
@@ -401,6 +454,12 @@
         private System.Windows.Forms.ColumnHeader clAction;
         private System.Windows.Forms.ColumnHeader clChannel;
         private System.Windows.Forms.ColumnHeader clYTUri;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
+        private DevExpress.XtraBars.BarHeaderItem txtLicenseDetail;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbOtherYTTools;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }
 

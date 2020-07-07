@@ -15,7 +15,7 @@ using IniParser;
 using IniParser.Model;
 using Microsoft.Win32;
 
-namespace YoutubeOrganicBot
+namespace AdvancedSocialBot
 {
     public partial class frmSplash : SplashScreen
     {

@@ -1,4 +1,4 @@
-﻿namespace YoutubeOrganicBot
+﻿namespace AdvancedSocialBot
 {
     partial class frmYTSettings
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace YoutubeOrganicBot
+namespace AdvancedSocialBot
 {
     /// <summary>
     /// Microsoft Visual C++ Redistributable Package Versions

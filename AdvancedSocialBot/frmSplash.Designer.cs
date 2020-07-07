@@ -1,4 +1,4 @@
-﻿namespace YoutubeOrganicBot
+﻿namespace AdvancedSocialBot
 {
     partial class frmSplash
     {
@@ -69,7 +69,7 @@
             // peImage
             // 
             this.peImage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.peImage.EditValue = global::YoutubeOrganicBot.Properties.Resources.youtubeda_sıfırdan_165_bin_aboneye_nasil_cikarsiniz_blog;
+            this.peImage.EditValue = global::AdvancedSocialBot.Properties.Resources.youtubeda_sıfırdan_165_bin_aboneye_nasil_cikarsiniz_blog;
             this.peImage.Location = new System.Drawing.Point(1, 1);
             this.peImage.Name = "peImage";
             this.peImage.Properties.AllowFocused = false;
@@ -86,7 +86,7 @@
             // 
             this.peLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.peLogo.EditValue = global::YoutubeOrganicBot.Properties.Resources.youtube_512px;
+            this.peLogo.EditValue = global::AdvancedSocialBot.Properties.Resources.youtube_512px;
             this.peLogo.Location = new System.Drawing.Point(494, 367);
             this.peLogo.Name = "peLogo";
             this.peLogo.Properties.AllowFocused = false;

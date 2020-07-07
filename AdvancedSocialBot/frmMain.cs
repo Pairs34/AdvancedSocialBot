@@ -19,12 +19,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 using UHWID;
-using YoutubeOrganicBot.Helper;
+using AdvancedSocialBot.Helper;
 
-namespace YoutubeOrganicBot
+namespace AdvancedSocialBot
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
-    {        
+    {
         IWebDriver driver;
 
         public frmMain()
@@ -33,7 +33,8 @@ namespace YoutubeOrganicBot
 
             LoadProfiles();
 
-            activeUsersList.EditValue = cbActiveUsersList.Items[0].ToString();
+            if (activeUsersList.EditValue != null)
+                activeUsersList.EditValue = cbActiveUsersList.Items[0].ToString();
 
             InitPaths();
 
@@ -310,7 +311,7 @@ namespace YoutubeOrganicBot
                     }
                     else
                     {
-                        //lblLicText.Text = $"Kişi Adı = {((Lisans)response).kisiadi} Bitiş Zamanı = {((Lisans)response).bitistarihi} Lisans Kodu = {((Lisans)response).licenseKey}";
+                        txtLicenseDetail.Caption = $"Bitiş Zamanı = {((Lisans)response).bitistarihi} Lisans Kodu = {((Lisans)response).licenseKey}";
                         txtLicenseOwner.Caption = ((Lisans)response).kisiadi;
                         if (needLicRefreshCounter > 10)
                             needLicRefreshCounter = 0;

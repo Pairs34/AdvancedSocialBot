@@ -9,9 +9,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace YoutubeOrganicBot
+namespace AdvancedSocialBot
 {
-    partial class AboutForm : Form
+    partial class AboutForm : DevExpress.XtraEditors.XtraForm
     {
         public AboutForm()
         {

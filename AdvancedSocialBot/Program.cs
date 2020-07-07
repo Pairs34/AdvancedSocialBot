@@ -6,9 +6,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using YoutubeOrganicBot.Helper;
+using AdvancedSocialBot.Helper;
 
-namespace YoutubeOrganicBot
+namespace AdvancedSocialBot
 {
     static class Program
     {
@@ -22,9 +22,9 @@ namespace YoutubeOrganicBot
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                Process.GetProcesses()
-                     .Where(pr => pr.ProcessName.Contains("gecko") || pr.ProcessName.Contains("firefox"))
-                     .ForEach(p => p.Kill());
+                //Process.GetProcesses()
+                //     .Where(pr => pr.ProcessName.Contains("gecko") || pr.ProcessName.Contains("firefox"))
+                //     .ForEach(p => p.Kill());
                 LogManager.LogToFile("Program Başladı");
                 Application.Run(new frmSplash());
             }
