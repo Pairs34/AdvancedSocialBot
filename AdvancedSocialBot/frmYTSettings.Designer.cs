@@ -117,7 +117,7 @@
             this.tabChannels.Controls.Add(this.grpChannels);
             this.tabChannels.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabChannels.ImageOptions.Image")));
             this.tabChannels.Name = "tabChannels";
-            this.tabChannels.Size = new System.Drawing.Size(656, 296);
+            this.tabChannels.Size = new System.Drawing.Size(652, 298);
             this.tabChannels.Text = "Kanal Ayarları";
             // 
             // grpChannels
@@ -132,7 +132,7 @@
             this.grpChannels.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpChannels.Location = new System.Drawing.Point(0, 0);
             this.grpChannels.Name = "grpChannels";
-            this.grpChannels.Size = new System.Drawing.Size(656, 296);
+            this.grpChannels.Size = new System.Drawing.Size(652, 298);
             this.grpChannels.TabIndex = 7;
             this.grpChannels.Text = "Kanallar";
             this.grpChannels.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.grpChannels_CustomButtonClick);
@@ -141,9 +141,9 @@
             // 
             this.lstChannels.ContextMenuStrip = this.channelContextMenu;
             this.lstChannels.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lstChannels.Location = new System.Drawing.Point(2, 74);
+            this.lstChannels.Location = new System.Drawing.Point(2, 76);
             this.lstChannels.Name = "lstChannels";
-            this.lstChannels.Size = new System.Drawing.Size(652, 220);
+            this.lstChannels.Size = new System.Drawing.Size(648, 220);
             this.lstChannels.TabIndex = 2;
             this.lstChannels.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstChannels_KeyDown);
             // 
@@ -185,7 +185,7 @@
             this.tabComments.Controls.Add(this.grpComments);
             this.tabComments.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabComments.ImageOptions.Image")));
             this.tabComments.Name = "tabComments";
-            this.tabComments.Size = new System.Drawing.Size(656, 296);
+            this.tabComments.Size = new System.Drawing.Size(652, 298);
             this.tabComments.Text = "Yorum Ayarları";
             // 
             // grpComments
@@ -200,7 +200,7 @@
             this.grpComments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpComments.Location = new System.Drawing.Point(0, 0);
             this.grpComments.Name = "grpComments";
-            this.grpComments.Size = new System.Drawing.Size(656, 296);
+            this.grpComments.Size = new System.Drawing.Size(652, 298);
             this.grpComments.TabIndex = 8;
             this.grpComments.Text = "Yorumlar";
             this.grpComments.CustomButtonClick += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.grpComments_CustomButtonClick);
@@ -210,9 +210,9 @@
             this.lstComments.ContextMenuStrip = this.commentContextMenu;
             this.lstComments.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lstComments.ItemAutoHeight = true;
-            this.lstComments.Location = new System.Drawing.Point(2, 74);
+            this.lstComments.Location = new System.Drawing.Point(2, 76);
             this.lstComments.Name = "lstComments";
-            this.lstComments.Size = new System.Drawing.Size(652, 220);
+            this.lstComments.Size = new System.Drawing.Size(648, 220);
             this.lstComments.TabIndex = 2;
             this.lstComments.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstComments_KeyDown);
             // 
@@ -254,7 +254,7 @@
             this.tabTimeSettings.Controls.Add(this.grpCustomSettings);
             this.tabTimeSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabTimeSettings.ImageOptions.Image")));
             this.tabTimeSettings.Name = "tabTimeSettings";
-            this.tabTimeSettings.Size = new System.Drawing.Size(656, 296);
+            this.tabTimeSettings.Size = new System.Drawing.Size(652, 298);
             this.tabTimeSettings.Text = "Zaman Ayarları";
             // 
             // grpCustomSettings
@@ -276,7 +276,7 @@
             this.grpCustomSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpCustomSettings.Location = new System.Drawing.Point(0, 0);
             this.grpCustomSettings.Name = "grpCustomSettings";
-            this.grpCustomSettings.Size = new System.Drawing.Size(656, 296);
+            this.grpCustomSettings.Size = new System.Drawing.Size(652, 298);
             this.grpCustomSettings.TabIndex = 10;
             this.grpCustomSettings.Text = "Bazı Özel Ayarlar";
             // 
@@ -387,11 +387,9 @@
             // 
             this.IsCustomTextActive.Location = new System.Drawing.Point(224, 42);
             this.IsCustomTextActive.Name = "IsCustomTextActive";
-            this.IsCustomTextActive.Properties.LookAndFeel.SkinName = "DevExpress Style";
-            this.IsCustomTextActive.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.IsCustomTextActive.Properties.OffText = "Yorumlara Ek Söz Ekleme";
             this.IsCustomTextActive.Properties.OnText = "Yorumlara Ek Söz Ekle";
-            this.IsCustomTextActive.Size = new System.Drawing.Size(197, 24);
+            this.IsCustomTextActive.Size = new System.Drawing.Size(197, 20);
             this.IsCustomTextActive.TabIndex = 0;
             // 
             // tabUsedChannels
@@ -399,7 +397,7 @@
             this.tabUsedChannels.Controls.Add(this.grpUsedChannels);
             this.tabUsedChannels.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabUsedChannels.ImageOptions.Image")));
             this.tabUsedChannels.Name = "tabUsedChannels";
-            this.tabUsedChannels.Size = new System.Drawing.Size(656, 296);
+            this.tabUsedChannels.Size = new System.Drawing.Size(652, 298);
             this.tabUsedChannels.Text = "Geçmiş Kanallar";
             // 
             // grpUsedChannels
@@ -409,16 +407,16 @@
             this.grpUsedChannels.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpUsedChannels.Location = new System.Drawing.Point(0, 0);
             this.grpUsedChannels.Name = "grpUsedChannels";
-            this.grpUsedChannels.Size = new System.Drawing.Size(656, 296);
+            this.grpUsedChannels.Size = new System.Drawing.Size(652, 298);
             this.grpUsedChannels.TabIndex = 9;
             this.grpUsedChannels.Text = "İşlem Gören Kanallar";
             // 
             // lstUsedChannel
             // 
             this.lstUsedChannel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstUsedChannel.Location = new System.Drawing.Point(2, 39);
+            this.lstUsedChannel.Location = new System.Drawing.Point(2, 33);
             this.lstUsedChannel.Name = "lstUsedChannel";
-            this.lstUsedChannel.Size = new System.Drawing.Size(652, 255);
+            this.lstUsedChannel.Size = new System.Drawing.Size(648, 263);
             this.lstUsedChannel.TabIndex = 2;
             this.lstUsedChannel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstUsedChannel_KeyDown);
             // 

@@ -38,7 +38,7 @@
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.picMail = new DevExpress.XtraEditors.PictureEdit();
             this.telegramLink = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.okButton = new System.Windows.Forms.Button();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -56,7 +56,7 @@
             this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
             this.tableLayoutPanel.Controls.Add(this.panel1, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
+            this.tableLayoutPanel.Controls.Add(this.btnClose, 1, 5);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(9, 9);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -182,20 +182,19 @@
             this.telegramLink.Text = "https://t.me/PairsX";
             this.telegramLink.Click += new System.EventHandler(this.telegramLink_Click);
             // 
-            // okButton
+            // btnClose
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(342, 241);
-            this.okButton.Margin = new System.Windows.Forms.Padding(0);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 24);
-            this.okButton.TabIndex = 24;
-            this.okButton.Text = "&Kapat";
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(349, 240);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(65, 22);
+            this.btnClose.TabIndex = 28;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // AboutForm
             // 
-            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 283);
@@ -226,11 +225,11 @@
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.Button okButton;
         private DevExpress.XtraEditors.HyperlinkLabelControl telegramLink;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit picMail;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.HyperlinkLabelControl mailLink;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
     }
 }

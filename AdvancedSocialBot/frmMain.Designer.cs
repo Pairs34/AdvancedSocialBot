@@ -116,7 +116,7 @@
             this.cbIsDebugger});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(724, 164);
+            this.ribbonControl.Size = new System.Drawing.Size(734, 181);
             this.ribbonControl.StatusBar = this.statusBar;
             // 
             // btnProfileManager
@@ -283,8 +283,8 @@
             // 
             this.btnUnFollow.Caption = "UnFollower";
             this.btnUnFollow.Id = 24;
-            this.btnUnFollow.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnUnFollow.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnUnFollow.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUnFollow.ImageOptions.Image")));
+            this.btnUnFollow.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUnFollow.ImageOptions.LargeImage")));
             this.btnUnFollow.Name = "btnUnFollow";
             // 
             // barButtonItem2
@@ -337,10 +337,10 @@
             this.statusBar.ItemLinks.Add(this.txtTotalChannels);
             this.statusBar.ItemLinks.Add(this.lblUsedChannelsCount);
             this.statusBar.ItemLinks.Add(this.txtUsedChannelsCount);
-            this.statusBar.Location = new System.Drawing.Point(0, 465);
+            this.statusBar.Location = new System.Drawing.Point(0, 467);
             this.statusBar.Name = "statusBar";
             this.statusBar.Ribbon = this.ribbonControl;
-            this.statusBar.Size = new System.Drawing.Size(724, 27);
+            this.statusBar.Size = new System.Drawing.Size(734, 26);
             // 
             // txtUsedChannelsCount
             // 
@@ -358,9 +358,9 @@
             this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstLog.FullRowSelect = true;
             this.lstLog.HideSelection = false;
-            this.lstLog.Location = new System.Drawing.Point(0, 164);
+            this.lstLog.Location = new System.Drawing.Point(0, 181);
             this.lstLog.Name = "lstLog";
-            this.lstLog.Size = new System.Drawing.Size(724, 301);
+            this.lstLog.Size = new System.Drawing.Size(734, 286);
             this.lstLog.TabIndex = 8;
             this.lstLog.UseCompatibleStateImageBehavior = false;
             this.lstLog.View = System.Windows.Forms.View.Details;
@@ -383,16 +383,16 @@
             // fluentDesignFormContainer1
             // 
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 164);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 181);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(724, 328);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(734, 312);
             this.fluentDesignFormContainer1.TabIndex = 11;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 492);
+            this.ClientSize = new System.Drawing.Size(734, 493);
             this.Controls.Add(this.lstLog);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.fluentDesignFormContainer1);
