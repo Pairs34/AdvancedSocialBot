@@ -65,7 +65,13 @@
             this.tabUsedChannels = new DevExpress.XtraTab.XtraTabPage();
             this.grpUsedChannels = new DevExpress.XtraEditors.GroupControl();
             this.lstUsedChannel = new DevExpress.XtraEditors.ListBoxControl();
+            this.tabGeneralSettings = new DevExpress.XtraTab.XtraTabPage();
+            this.swRemoteServer = new DevExpress.XtraEditors.ToggleSwitch();
+            this.lblServerUri = new DevExpress.XtraEditors.LabelControl();
+            this.txtServerUri = new DevExpress.XtraEditors.TextEdit();
             this.btnSaveYTSettings = new DevExpress.XtraEditors.SimpleButton();
+            this.lblFirefoxPath = new DevExpress.XtraEditors.LabelControl();
+            this.txtFirefoxPath = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabControllerSettings)).BeginInit();
             this.tabControllerSettings.SuspendLayout();
             this.tabChannels.SuspendLayout();
@@ -95,6 +101,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpUsedChannels)).BeginInit();
             this.grpUsedChannels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lstUsedChannel)).BeginInit();
+            this.tabGeneralSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.swRemoteServer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerUri.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirefoxPath.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControllerSettings
@@ -110,7 +120,8 @@
             this.tabChannels,
             this.tabComments,
             this.tabTimeSettings,
-            this.tabUsedChannels});
+            this.tabUsedChannels,
+            this.tabGeneralSettings});
             // 
             // tabChannels
             // 
@@ -420,6 +431,42 @@
             this.lstUsedChannel.TabIndex = 2;
             this.lstUsedChannel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstUsedChannel_KeyDown);
             // 
+            // tabGeneralSettings
+            // 
+            this.tabGeneralSettings.Controls.Add(this.lblFirefoxPath);
+            this.tabGeneralSettings.Controls.Add(this.txtFirefoxPath);
+            this.tabGeneralSettings.Controls.Add(this.swRemoteServer);
+            this.tabGeneralSettings.Controls.Add(this.lblServerUri);
+            this.tabGeneralSettings.Controls.Add(this.txtServerUri);
+            this.tabGeneralSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabGeneralSettings.ImageOptions.Image")));
+            this.tabGeneralSettings.Name = "tabGeneralSettings";
+            this.tabGeneralSettings.Size = new System.Drawing.Size(652, 298);
+            this.tabGeneralSettings.Text = "Genel Ayarlar";
+            // 
+            // swRemoteServer
+            // 
+            this.swRemoteServer.Location = new System.Drawing.Point(365, 10);
+            this.swRemoteServer.Name = "swRemoteServer";
+            this.swRemoteServer.Properties.OffText = "Uzak Sunucu Pasif";
+            this.swRemoteServer.Properties.OnText = "Uzak Sunucu Aktif";
+            this.swRemoteServer.Size = new System.Drawing.Size(153, 20);
+            this.swRemoteServer.TabIndex = 2;
+            // 
+            // lblServerUri
+            // 
+            this.lblServerUri.Location = new System.Drawing.Point(13, 13);
+            this.lblServerUri.Name = "lblServerUri";
+            this.lblServerUri.Size = new System.Drawing.Size(68, 13);
+            this.lblServerUri.TabIndex = 1;
+            this.lblServerUri.Text = "Sunucu Adresi";
+            // 
+            // txtServerUri
+            // 
+            this.txtServerUri.Location = new System.Drawing.Point(87, 10);
+            this.txtServerUri.Name = "txtServerUri";
+            this.txtServerUri.Size = new System.Drawing.Size(272, 20);
+            this.txtServerUri.TabIndex = 0;
+            // 
             // btnSaveYTSettings
             // 
             this.btnSaveYTSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSaveYTSettings.ImageOptions.SvgImage")));
@@ -429,6 +476,21 @@
             this.btnSaveYTSettings.TabIndex = 12;
             this.btnSaveYTSettings.Text = "Kaydet";
             this.btnSaveYTSettings.Click += new System.EventHandler(this.btnSaveYTSettings_Click);
+            // 
+            // lblFirefoxPath
+            // 
+            this.lblFirefoxPath.Location = new System.Drawing.Point(13, 39);
+            this.lblFirefoxPath.Name = "lblFirefoxPath";
+            this.lblFirefoxPath.Size = new System.Drawing.Size(59, 13);
+            this.lblFirefoxPath.TabIndex = 4;
+            this.lblFirefoxPath.Text = "Firefox Path";
+            // 
+            // txtFirefoxPath
+            // 
+            this.txtFirefoxPath.Location = new System.Drawing.Point(87, 36);
+            this.txtFirefoxPath.Name = "txtFirefoxPath";
+            this.txtFirefoxPath.Size = new System.Drawing.Size(272, 20);
+            this.txtFirefoxPath.TabIndex = 3;
             // 
             // frmYTSettings
             // 
@@ -474,6 +536,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpUsedChannels)).EndInit();
             this.grpUsedChannels.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lstUsedChannel)).EndInit();
+            this.tabGeneralSettings.ResumeLayout(false);
+            this.tabGeneralSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.swRemoteServer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerUri.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirefoxPath.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -513,5 +580,11 @@
         private DevExpress.XtraTab.XtraTabPage tabUsedChannels;
         private DevExpress.XtraEditors.GroupControl grpUsedChannels;
         private DevExpress.XtraEditors.ListBoxControl lstUsedChannel;
+        private DevExpress.XtraTab.XtraTabPage tabGeneralSettings;
+        private DevExpress.XtraEditors.LabelControl lblServerUri;
+        private DevExpress.XtraEditors.TextEdit txtServerUri;
+        private DevExpress.XtraEditors.ToggleSwitch swRemoteServer;
+        private DevExpress.XtraEditors.LabelControl lblFirefoxPath;
+        private DevExpress.XtraEditors.TextEdit txtFirefoxPath;
     }
 }

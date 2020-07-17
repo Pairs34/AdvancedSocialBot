@@ -49,7 +49,10 @@ namespace AdvancedSocialBot
                     RandomWaitMax = Convert.ToInt32(txtRandomWaitMax.Text),
                     WatchTimeMin = Convert.ToInt32(txtVideoWatchMin.Text),
                     WatchTimeMax = Convert.ToInt32(txtVideoWatchMax.Text),
-                    PreCaption = txtPreCaption.Text
+                    PreCaption = txtPreCaption.Text,
+                    RemoteServerUri = txtServerUri.Text,
+                    IsActiveRemoteServer = swRemoteServer != null ? swRemoteServer.IsOn : false,
+                    RemoteFFPath = txtFirefoxPath.Text
                 };
 
                 var json = JsonConvert.SerializeObject(setting);
@@ -187,7 +190,9 @@ namespace AdvancedSocialBot
                     txtVideoWatchMax.Text = settingTime.WatchTimeMax.ToString();
                     IsCustomTextActive.IsOn = settingTime.IsCustomTextActive;
                     txtPreCaption.Text = settingTime.PreCaption;
-
+                    txtServerUri.Text = settingTime.RemoteServerUri;
+                    swRemoteServer.IsOn = settingTime.IsActiveRemoteServer;
+                    txtFirefoxPath.Text = settingTime.RemoteFFPath;
                     YTGlobalSettings.settingTime = settingTime;
                 }
             }

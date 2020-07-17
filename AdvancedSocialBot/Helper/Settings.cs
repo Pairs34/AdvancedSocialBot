@@ -16,5 +16,8 @@ namespace AdvancedSocialBot.Helper
         public int RandomWaitMin { get; set; }
         public int RandomWaitMax { get; set; }
         public string PreCaption { get; set; }
+        public string RemoteServerUri { get; set; }
+        public bool IsActiveRemoteServer { get; set; }
+        public string RemoteFFPath { get; set; }
     }
 }

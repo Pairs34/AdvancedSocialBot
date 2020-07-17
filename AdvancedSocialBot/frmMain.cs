@@ -20,6 +20,7 @@ using System.Web;
 using System.Windows.Forms;
 using UHWID;
 using AdvancedSocialBot.Helper;
+using OpenQA.Selenium.Remote;
 
 namespace AdvancedSocialBot
 {
@@ -897,7 +898,15 @@ namespace AdvancedSocialBot
                     driver.Quit();
                 }
 
-                driver = new FirefoxDriver(ffService, ffOptions);
+                if (YTGlobalSettings.settingTime.IsActiveRemoteServer)
+                {
+                    ffOptions.BrowserExecutableLocation = YTGlobalSettings.settingTime.RemoteFFPath;
+                   driver = new RemoteWebDriver(new Uri(YTGlobalSettings.settingTime.RemoteServerUri),ffOptions);
+                }
+                else
+                {                   
+                    driver = new FirefoxDriver(ffService, ffOptions);
+                }                
 
                 driver.Url = "https://www.youtube.com";
 
