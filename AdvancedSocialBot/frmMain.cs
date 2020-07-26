@@ -548,7 +548,7 @@ namespace AdvancedSocialBot
                                 await WatchVideo();
 
                                 //videoyu beğen
-                                await ClickLikeButton(rowNumber, FETCHED_CHANNELS);
+                                await ClickLikeButton();
 
                                 //yorum gönder
                                 var isCommended = await SendComment(lastVideo, txtCommentFind, ChannelName);
@@ -709,13 +709,11 @@ namespace AdvancedSocialBot
             return false;
         }
 
-        private async Task ClickLikeButton(int rowNumber, List<string> FETCHED_CHANNELS)
+        private async Task ClickLikeButton()
         {
-            var btnLikeFind = IsElementPresent(By.CssSelector(".ytd-menu-renderer:nth-child(1) > .yt-simple-endpoint > #button"));
-            if (btnLikeFind)
+            try
             {
-                var btnLike = driver.FindElement(By.CssSelector(".ytd-menu-renderer:nth-child(1) > .yt-simple-endpoint > #button"));
-                btnLike.Click();
+                RunJSCommand(driver, "document.querySelectorAll('#menu #top-level-buttons #button')[1].click();");
                 ToLog(new YTLog
                 {
                     KanalAdi = "",
@@ -723,6 +721,27 @@ namespace AdvancedSocialBot
                     Islem = "Like Atıldı "
                 });
             }
+            catch (Exception err)
+            {
+                ToLog(new YTLog
+                {
+                    KanalAdi = "",
+                    YTUri = "",
+                    Islem = "Like Atılırken Hata oluştu = "+ err.Message
+                });
+            }
+            //var btnLikeFind = IsElementPresent(By.CssSelector(".ytd-menu-renderer:nth-child(1) > .yt-simple-endpoint > #button"));
+            //if (btnLikeFind)
+            //{
+            //    var btnLike = driver.FindElement(By.CssSelector(".ytd-menu-renderer:nth-child(1) > .yt-simple-endpoint > #button"));
+            //    btnLike.Click();
+            //    ToLog(new YTLog
+            //    {
+            //        KanalAdi = "",
+            //        YTUri = "",
+            //        Islem = "Like Atıldı "
+            //    });
+            //}
 
             await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.RandomWaitMin, YTGlobalSettings.settingTime.RandomWaitMax));
         }
@@ -1070,6 +1089,18 @@ namespace AdvancedSocialBot
             frmYTSettings ytSettings = new frmYTSettings();
             ytSettings.ShowDialog();
         }
+
+        private void copyErrorText_Click(object sender, EventArgs e)
+        {
+            var errorText = lstLog.SelectedItems[0].SubItems[0].Text;
+            Clipboard.SetText(errorText);
+        }
+
+        private void copyChannelUri_Click(object sender, EventArgs e)
+        {
+            var channelUriText = lstLog.SelectedItems[0].SubItems[2].Text;
+            Clipboard.SetText(channelUriText);
+        }
     }
 
     public static class WebDriverExtensions
@@ -1079,9 +1110,9 @@ namespace AdvancedSocialBot
             if (timeoutInSeconds > 0)
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-#pragma warning disable CS0618 // Type or member is obsolete
+                #pragma warning disable CS0618 // Type or member is obsolete
                 return wait.Until(ExpectedConditions.ElementToBeClickable(by));
-#pragma warning restore CS0618 // Type or member is obsolete
+                #pragma warning restore CS0618 // Type or member is obsolete
             }
             return driver.FindElement(by);
         }

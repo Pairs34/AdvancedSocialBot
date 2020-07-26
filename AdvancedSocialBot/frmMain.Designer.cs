@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.backTask = new System.ComponentModel.BackgroundWorker();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -62,10 +63,14 @@
             this.clAction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clChannel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clYTUri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyErrorText = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyChannelUri = new System.Windows.Forms.ToolStripMenuItem();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).BeginInit();
+            this.sagTik.SuspendLayout();
             this.SuspendLayout();
             // 
             // backTask
@@ -355,6 +360,7 @@
             this.clAction,
             this.clChannel,
             this.clYTUri});
+            this.lstLog.ContextMenuStrip = this.sagTik;
             this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstLog.FullRowSelect = true;
             this.lstLog.HideSelection = false;
@@ -379,6 +385,28 @@
             // 
             this.clYTUri.Text = "YT Uri";
             this.clYTUri.Width = 213;
+            // 
+            // sagTik
+            // 
+            this.sagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyErrorText,
+            this.copyChannelUri});
+            this.sagTik.Name = "sagTik";
+            this.sagTik.Size = new System.Drawing.Size(195, 48);
+            // 
+            // copyErrorText
+            // 
+            this.copyErrorText.Name = "copyErrorText";
+            this.copyErrorText.Size = new System.Drawing.Size(194, 22);
+            this.copyErrorText.Text = "Hatayı Kopyala";
+            this.copyErrorText.Click += new System.EventHandler(this.copyErrorText_Click);
+            // 
+            // copyChannelUri
+            // 
+            this.copyChannelUri.Name = "copyChannelUri";
+            this.copyChannelUri.Size = new System.Drawing.Size(194, 22);
+            this.copyChannelUri.Text = "Kanal Adresini Kopyala";
+            this.copyChannelUri.Click += new System.EventHandler(this.copyChannelUri_Click);
             // 
             // fluentDesignFormContainer1
             // 
@@ -409,6 +437,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).EndInit();
+            this.sagTik.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,6 +478,9 @@
         private DevExpress.XtraBars.BarButtonItem btnUnFollow;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private System.Windows.Forms.ContextMenuStrip sagTik;
+        private System.Windows.Forms.ToolStripMenuItem copyErrorText;
+        private System.Windows.Forms.ToolStripMenuItem copyChannelUri;
     }
 }
 
