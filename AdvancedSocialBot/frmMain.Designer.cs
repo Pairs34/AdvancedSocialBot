@@ -67,6 +67,7 @@
             this.copyErrorText = new System.Windows.Forms.ToolStripMenuItem();
             this.copyChannelUri = new System.Windows.Forms.ToolStripMenuItem();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.clearLogs = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).BeginInit();
@@ -390,9 +391,10 @@
             // 
             this.sagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyErrorText,
-            this.copyChannelUri});
+            this.copyChannelUri,
+            this.clearLogs});
             this.sagTik.Name = "sagTik";
-            this.sagTik.Size = new System.Drawing.Size(195, 48);
+            this.sagTik.Size = new System.Drawing.Size(195, 92);
             // 
             // copyErrorText
             // 
@@ -415,6 +417,13 @@
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(734, 312);
             this.fluentDesignFormContainer1.TabIndex = 11;
+            // 
+            // clearLogs
+            // 
+            this.clearLogs.Name = "clearLogs";
+            this.clearLogs.Size = new System.Drawing.Size(194, 22);
+            this.clearLogs.Text = "Temizle";
+            this.clearLogs.Click += new System.EventHandler(this.clearLogs_Click);
             // 
             // frmMain
             // 
@@ -481,6 +490,7 @@
         private System.Windows.Forms.ContextMenuStrip sagTik;
         private System.Windows.Forms.ToolStripMenuItem copyErrorText;
         private System.Windows.Forms.ToolStripMenuItem copyChannelUri;
+        private System.Windows.Forms.ToolStripMenuItem clearLogs;
     }
 }
 

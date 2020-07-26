@@ -45,6 +45,12 @@ namespace AdvancedSocialBot
                 Settings settingTime = JsonConvert.DeserializeObject<Settings>(strJson);
                 YTGlobalSettings.settingTime = settingTime;
             }
+
+            ToLog(new YTLog { 
+                Islem = "Abone Olundu",
+                KanalAdi = "test kanal",
+                YTUri = "yturi"
+            });
         }
 
         private void InitPaths()
@@ -778,13 +784,13 @@ namespace AdvancedSocialBot
         {
             try
             {
-                var btnSubscribeFind = IsElementPresent(By.XPath("//div[@id='subscribe-button']/ytd-subscribe-button-renderer/paper-button"));
+                //var btnSubscribeFind = IsElementPresent(By.XPath("//div[@id='subscribe-button']/ytd-subscribe-button-renderer/paper-button"));
+                var btnSubscribeFind = IsElementPresent(By.CssSelector("ytd-button-renderer.style-destructive[is-paper-button] #button"));
                 //abone ol butonunu bul
                 if (btnSubscribeFind)
                 {
                     //bulunca tıkla
-                    var subscribeButton = driver.FindElement(By.XPath("//div[@id='subscribe-button']/ytd-subscribe-button-renderer/paper-button"), 5);
-                    subscribeButton.Click();
+                    RunJSCommand(driver, "document.querySelector('ytd-button-renderer.style-destructive[is-paper-button] #button').click()");
                     ToLog(new YTLog
                     {
                         KanalAdi = "",
@@ -795,9 +801,9 @@ namespace AdvancedSocialBot
                     await Task.Delay(new Random().Next(YTGlobalSettings.settingTime.RandomWaitMin, YTGlobalSettings.settingTime.RandomWaitMax));
 
                     //daha önce abone olmuşmu kontrol et
-                    if (IsElementPresent(By.XPath("//yt-confirm-dialog-renderer")))//Daha önce abone olunmuş
+                    if (IsElementPresent(By.CssSelector("yt-confirm-dialog-renderer[dialog][dialog][dialog]")))//Daha önce abone olunmuş
                     {
-                        if (IsElementPresent(By.XPath("//yt-button-renderer[@id='cancel-button']/a/paper-button")))
+                        if (IsElementPresent(By.CssSelector("#confirm-button")))
                         {
                             ToLog(new YTLog
                             {
@@ -1093,13 +1099,18 @@ namespace AdvancedSocialBot
         private void copyErrorText_Click(object sender, EventArgs e)
         {
             var errorText = lstLog.SelectedItems[0].SubItems[0].Text;
-            Clipboard.SetText(errorText);
+            Clipboard.SetDataObject(errorText, true);
         }
 
         private void copyChannelUri_Click(object sender, EventArgs e)
         {
             var channelUriText = lstLog.SelectedItems[0].SubItems[2].Text;
             Clipboard.SetText(channelUriText);
+        }
+
+        private void clearLogs_Click(object sender, EventArgs e)
+        {
+            lstLog.Items.Clear();
         }
     }
 
