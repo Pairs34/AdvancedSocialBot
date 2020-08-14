@@ -4,6 +4,7 @@
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="Bu yükleyici veritabanı, [|ProductName] yüklemek için gerekli mantığı ve verileri içeriyor." ValueLocId="*"/>
+    <ROW Property="ARPPRODUCTICON" Value="youtube_512px.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Extremity Soft"/>
     <ROW Property="ProductCode" Value="1055:{A5B4F685-DA7D-41F9-8FC8-8C27E79106FA} " Type="16"/>
@@ -222,6 +223,9 @@
     <ROW Feature_="MainFeature" Component_="WebDriver.Support.dll"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
     <ROW Feature_="MainFeature" Component_="settings.json"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="youtube_512px.exe" SourcePath="..\AdvancedSocialBot\youtube_512px.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
