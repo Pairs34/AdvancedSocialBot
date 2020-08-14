@@ -46,11 +46,11 @@ namespace AdvancedSocialBot
                 YTGlobalSettings.settingTime = settingTime;
             }
 
-            ToLog(new YTLog { 
-                Islem = "Abone Olundu",
-                KanalAdi = "test kanal",
-                YTUri = "yturi"
-            });
+            //ToLog(new YTLog { 
+            //    Islem = "Abone Olundu",
+            //    KanalAdi = "test kanal",
+            //    YTUri = "yturi"
+            //});
         }
 
         private void InitPaths()

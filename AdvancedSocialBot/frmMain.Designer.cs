@@ -66,8 +66,8 @@
             this.sagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyErrorText = new System.Windows.Forms.ToolStripMenuItem();
             this.copyChannelUri = new System.Windows.Forms.ToolStripMenuItem();
-            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.clearLogs = new System.Windows.Forms.ToolStripMenuItem();
+            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbActiveUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIsDebugger)).BeginInit();
@@ -401,6 +401,7 @@
             this.copyErrorText.Name = "copyErrorText";
             this.copyErrorText.Size = new System.Drawing.Size(194, 22);
             this.copyErrorText.Text = "Hatayı Kopyala";
+            this.copyErrorText.Visible = false;
             this.copyErrorText.Click += new System.EventHandler(this.copyErrorText_Click);
             // 
             // copyChannelUri
@@ -408,7 +409,15 @@
             this.copyChannelUri.Name = "copyChannelUri";
             this.copyChannelUri.Size = new System.Drawing.Size(194, 22);
             this.copyChannelUri.Text = "Kanal Adresini Kopyala";
+            this.copyChannelUri.Visible = false;
             this.copyChannelUri.Click += new System.EventHandler(this.copyChannelUri_Click);
+            // 
+            // clearLogs
+            // 
+            this.clearLogs.Name = "clearLogs";
+            this.clearLogs.Size = new System.Drawing.Size(194, 22);
+            this.clearLogs.Text = "Temizle";
+            this.clearLogs.Click += new System.EventHandler(this.clearLogs_Click);
             // 
             // fluentDesignFormContainer1
             // 
@@ -417,13 +426,6 @@
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(734, 312);
             this.fluentDesignFormContainer1.TabIndex = 11;
-            // 
-            // clearLogs
-            // 
-            this.clearLogs.Name = "clearLogs";
-            this.clearLogs.Size = new System.Drawing.Size(194, 22);
-            this.clearLogs.Text = "Temizle";
-            this.clearLogs.Click += new System.EventHandler(this.clearLogs_Click);
             // 
             // frmMain
             // 

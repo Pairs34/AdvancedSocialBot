@@ -25,6 +25,11 @@ namespace AdvancedSocialBot
 
         private void btnSaveYTSettings_Click(object sender, EventArgs e)
         {
+            if (Directory.Exists($"{Application.StartupPath}\\Profiles"))
+            {
+                Directory.CreateDirectory($"{Application.StartupPath}\\Profiles");
+            }
+
             if (!File.Exists(YTGlobalSettings.CHANNELS_FILE_PATH))
                 File.Create(YTGlobalSettings.CHANNELS_FILE_PATH).Close();
 

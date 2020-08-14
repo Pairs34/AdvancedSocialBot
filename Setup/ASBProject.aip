@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.3" version="17.3" PreviousModules="simple" Modules="professional" RootPath="." Language="tr" Id="{F1272A6F-B2A2-45A6-998D-124A0ADE7312}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="Bu yükleyici veritabanı, [|ProductName] yüklemek için gerekli mantığı ve verileri içeriyor." ValueLocId="*"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="Manufacturer" Value="Extremity Soft"/>
+    <ROW Property="ProductCode" Value="1055:{A5B4F685-DA7D-41F9-8FC8-8C27E79106FA} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Advanced Social Bot"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{A4DD5E41-6F02-4979-89C7-8D13775CDF16}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{418B7B05-69A6-4C8E-812C-312F88964B92}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="AdvancedSocialBot.exe" ComponentId="{27E0167B-E45E-470D-AC3E-330F31CCC7AE}" Directory_="APPDIR" Attributes="0" KeyPath="AdvancedSocialBot.exe"/>
+    <ROW Component="AdvancedSocialBot.exe.config" ComponentId="{7F202C9D-183B-4C44-86A9-B000603D4CA7}" Directory_="APPDIR" Attributes="0" KeyPath="AdvancedSocialBot.exe.config" Type="0"/>
+    <ROW Component="DevExpress.BonusSkins.v20.1.dll" ComponentId="{867FF790-026D-481D-8018-C0BB8E745F76}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.BonusSkins.v20.1.dll"/>
+    <ROW Component="DevExpress.Data.Desktop.v20.1.dll" ComponentId="{4B7872FB-5C1D-4E8E-8F80-EF0F09CDC1EA}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.Desktop.v20.1.dll"/>
+    <ROW Component="DevExpress.Data.v20.1.dll" ComponentId="{2DF19558-35A8-434E-B68D-740E9A126BFE}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Data.v20.1.dll"/>
+    <ROW Component="DevExpress.Printing.v20.1.Core.dll" ComponentId="{5F510C18-3274-4476-A62C-73176EF258F9}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Printing.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Sparkline.v20.1.Core.dll" ComponentId="{059014D6-50BC-478F-A732-096338B9DEE1}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Sparkline.v20.1.Core.dll"/>
+    <ROW Component="DevExpress.Utils.v20.1.dll" ComponentId="{746ED4CC-2256-45A3-A364-16F9F32F7BDD}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.Utils.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraBars.v20.1.dll" ComponentId="{8D59AAE4-F092-4AF4-AEBC-79391C5E9AD5}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraBars.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraEditors.v20.1.dll" ComponentId="{C954A96E-72FE-4EE1-8841-F7E50B5F0BB4}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraEditors.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraGrid.v20.1.dll" ComponentId="{9DD38EE9-0F8F-4424-9675-573AC4F8E97F}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraGrid.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraLayout.v20.1.dll" ComponentId="{F62E906F-3326-4151-B7E8-3ED72DF1F2D5}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraLayout.v20.1.dll"/>
+    <ROW Component="DevExpress.XtraPrinting.v20.1.dll" ComponentId="{253FE5F5-D354-42C2-82A9-5EE37DBF242E}" Directory_="APPDIR" Attributes="0" KeyPath="DevExpress.XtraPrinting.v20.1.dll"/>
+    <ROW Component="INIFileParser.dll" ComponentId="{E7987AAB-EF50-456B-AF6E-6DE7113AE0B6}" Directory_="APPDIR" Attributes="0" KeyPath="INIFileParser.dll"/>
+    <ROW Component="Microsoft.CSharp.dll" ComponentId="{6354150F-E8A2-4A8E-84A8-CD0507C3ACF5}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.CSharp.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{830D3ABB-005F-4B96-886C-6674FC243D8C}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{25CEEDD2-38C4-43CF-9C01-238CBD635DA9}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{E64FBA25-C2AC-49C4-BB7C-6285781CB0DD}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Serilog.Sinks.File.dll" ComponentId="{08A7457A-1946-40E8-83A3-EEF32551D674}" Directory_="APPDIR" Attributes="0" KeyPath="Serilog.Sinks.File.dll"/>
+    <ROW Component="Serilog.dll" ComponentId="{52C16214-8812-4A17-BAD2-2889E6FFFE4A}" Directory_="APPDIR" Attributes="0" KeyPath="Serilog.dll"/>
+    <ROW Component="System.Core.dll" ComponentId="{3EFD3541-F444-41DE-9001-5172DD715807}" Directory_="APPDIR" Attributes="0" KeyPath="System.Core.dll"/>
+    <ROW Component="System.Data.dll" ComponentId="{82BCDB55-3F4A-4187-9E91-FBD4CB413E8A}" Directory_="APPDIR" Attributes="0" KeyPath="System.Data.dll"/>
+    <ROW Component="System.Drawing.dll" ComponentId="{15F3F173-0278-477B-8004-0EC0517A9A83}" Directory_="APPDIR" Attributes="0" KeyPath="System.Drawing.dll"/>
+    <ROW Component="System.Management.dll" ComponentId="{1E1291AC-5234-449D-896A-5ED0A9DC9946}" Directory_="APPDIR" Attributes="0" KeyPath="System.Management.dll"/>
+    <ROW Component="System.Net.Http.dll" ComponentId="{968173C1-550A-41EA-8703-36F7CC70F1AC}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.dll"/>
+    <ROW Component="System.Web.dll" ComponentId="{CA45EBD4-CDE0-4135-BD12-D03517787602}" Directory_="APPDIR" Attributes="0" KeyPath="System.Web.dll"/>
+    <ROW Component="System.Windows.Forms.dll" ComponentId="{0592E8F8-F790-40B6-A339-BB3375BACBA7}" Directory_="APPDIR" Attributes="0" KeyPath="System.Windows.Forms.dll"/>
+    <ROW Component="System.dll" ComponentId="{9DC2729B-1206-4029-9228-47A8522F2554}" Directory_="APPDIR" Attributes="0" KeyPath="System.dll"/>
+    <ROW Component="WebDriver.Support.dll" ComponentId="{0EC8B539-F3DB-40C0-B1E7-E267BB638E86}" Directory_="APPDIR" Attributes="0" KeyPath="WebDriver.Support.dll"/>
+    <ROW Component="WebDriver.dll" ComponentId="{AF9BD7D9-6C80-454F-BECE-1630A105624A}" Directory_="APPDIR" Attributes="0" KeyPath="WebDriver.dll"/>
+    <ROW Component="mscorlib.dll" ComponentId="{7B090FA9-2355-42DC-B0B1-3B62918F693D}" Directory_="APPDIR" Attributes="0" KeyPath="mscorlib.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="DevExpress.Printing.v20.1.Core.dll" Component_="DevExpress.Printing.v20.1.Core.dll" FileName="DEVEXP~1.DLL|DevExpress.Printing.v20.1.Core.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.Printing.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Data.Desktop.v20.1.dll" Component_="DevExpress.Data.Desktop.v20.1.dll" FileName="DEVEXP~2.DLL|DevExpress.Data.Desktop.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.Data.Desktop.v20.1.dll" SelfReg="false"/>
+    <ROW File="AdvancedSocialBot.exe" Component_="AdvancedSocialBot.exe" FileName="ADVANC~1.EXE|AdvancedSocialBot.exe" Attributes="0" SourcePath="..\AdvancedSocialBot\bin\Release\AdvancedSocialBot.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="System.Web.dll" Component_="System.Web.dll" FileName="SYSTEM~1.DLL|System.Web.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Web.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Sparkline.v20.1.Core.dll" Component_="DevExpress.Sparkline.v20.1.Core.dll" FileName="DEVEXP~3.DLL|DevExpress.Sparkline.v20.1.Core.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.Sparkline.v20.1.Core.dll" SelfReg="false"/>
+    <ROW File="AdvancedSocialBot.exe.config" Component_="AdvancedSocialBot.exe.config" FileName="ADVANC~1.CON|AdvancedSocialBot.exe.config" Attributes="0" SourcePath="..\AdvancedSocialBot\bin\Release\AdvancedSocialBot.exe.config" SelfReg="false"/>
+    <ROW File="DevExpress.Data.v20.1.dll" Component_="DevExpress.Data.v20.1.dll" FileName="DEVEXP~4.DLL|DevExpress.Data.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.Data.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.BonusSkins.v20.1.dll" Component_="DevExpress.BonusSkins.v20.1.dll" FileName="DEVEXP~5.DLL|DevExpress.BonusSkins.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.BonusSkins.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraGrid.v20.1.dll" Component_="DevExpress.XtraGrid.v20.1.dll" FileName="DEVEXP~6.DLL|DevExpress.XtraGrid.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.XtraGrid.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.Utils.v20.1.dll" Component_="DevExpress.Utils.v20.1.dll" FileName="DEVEXP~7.DLL|DevExpress.Utils.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.Utils.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraBars.v20.1.dll" Component_="DevExpress.XtraBars.v20.1.dll" FileName="DEVEXP~8.DLL|DevExpress.XtraBars.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.XtraBars.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraEditors.v20.1.dll" Component_="DevExpress.XtraEditors.v20.1.dll" FileName="DEVEXP~9.DLL|DevExpress.XtraEditors.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.XtraEditors.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraLayout.v20.1.dll" Component_="DevExpress.XtraLayout.v20.1.dll" FileName="DEVEX~10.DLL|DevExpress.XtraLayout.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.XtraLayout.v20.1.dll" SelfReg="false"/>
+    <ROW File="DevExpress.XtraPrinting.v20.1.dll" Component_="DevExpress.XtraPrinting.v20.1.dll" FileName="DEVEX~11.DLL|DevExpress.XtraPrinting.v20.1.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\DevExpress 20.1\Components\Bin\Framework\DevExpress.XtraPrinting.v20.1.dll" SelfReg="false"/>
+    <ROW File="INIFileParser.dll" Component_="INIFileParser.dll" FileName="INIFIL~1.DLL|INIFileParser.dll" Attributes="0" SourcePath="..\packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll" SelfReg="false"/>
+    <ROW File="Microsoft.CSharp.dll" Component_="Microsoft.CSharp.dll" FileName="MICROS~1.DLL|Microsoft.CSharp.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Microsoft.CSharp.dll" SelfReg="false"/>
+    <ROW File="mscorlib.dll" Component_="mscorlib.dll" FileName="mscorlib.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll" SelfReg="false"/>
+    <ROW File="System.Drawing.dll" Component_="System.Drawing.dll" FileName="SYSTEM~2.DLL|System.Drawing.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Drawing.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Serilog.dll" Component_="Serilog.dll" FileName="Serilog.dll" Attributes="0" SourcePath="..\packages\Serilog.2.9.0\lib\net46\Serilog.dll" SelfReg="false"/>
+    <ROW File="Serilog.Sinks.File.dll" Component_="Serilog.Sinks.File.dll" FileName="SERILO~1.DLL|Serilog.Sinks.File.dll" Attributes="0" SourcePath="..\packages\Serilog.Sinks.File.4.1.0\lib\net45\Serilog.Sinks.File.dll" SelfReg="false"/>
+    <ROW File="System.Core.dll" Component_="System.Core.dll" FileName="SYSTEM~3.DLL|System.Core.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Core.dll" SelfReg="false"/>
+    <ROW File="System.Data.dll" Component_="System.Data.dll" FileName="SYSTEM~4.DLL|System.Data.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.dll" SelfReg="false"/>
+    <ROW File="System.dll" Component_="System.dll" FileName="System.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll" SelfReg="false"/>
+    <ROW File="System.Management.dll" Component_="System.Management.dll" FileName="SYSTEM~5.DLL|System.Management.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Management.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.dll" Component_="System.Net.Http.dll" FileName="SYSTEM~6.DLL|System.Net.Http.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Net.Http.dll" SelfReg="false"/>
+    <ROW File="System.Windows.Forms.dll" Component_="System.Windows.Forms.dll" FileName="SYSTEM~7.DLL|System.Windows.Forms.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Windows.Forms.dll" SelfReg="false"/>
+    <ROW File="WebDriver.dll" Component_="WebDriver.dll" FileName="WEBDRI~1.DLL|WebDriver.dll" Attributes="0" SourcePath="..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll" SelfReg="false"/>
+    <ROW File="WebDriver.Support.dll" Component_="WebDriver.Support.dll" FileName="WEBDRI~2.DLL|WebDriver.Support.dll" Attributes="0" SourcePath="..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="tr" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_tr.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="SetupTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SetupTypeDlg.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="204"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="205"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalButton" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="102"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="CompleteButton" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL AND InstallMode=InstallModeComplete" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeComplete" Ordering="203"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="102"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="202"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="CustomButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#AdvancedSocialBot.exe]"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Printing.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.Desktop.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="AdvancedSocialBot.exe"/>
+    <ROW Feature_="MainFeature" Component_="System.Web.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Sparkline.v20.1.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="AdvancedSocialBot.exe.config"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Data.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.BonusSkins.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraGrid.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.Utils.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraBars.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraEditors.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraLayout.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="DevExpress.XtraPrinting.v20.1.dll"/>
+    <ROW Feature_="MainFeature" Component_="INIFileParser.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.CSharp.dll"/>
+    <ROW Feature_="MainFeature" Component_="mscorlib.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Drawing.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.dll"/>
+    <ROW Feature_="MainFeature" Component_="Serilog.Sinks.File.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Management.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Http.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Windows.Forms.dll"/>
+    <ROW Feature_="MainFeature" Component_="WebDriver.dll"/>
+    <ROW Feature_="MainFeature" Component_="WebDriver.Support.dll"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName], [WindowsTypeNT5XDisplay] üzerine yüklenemez." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName], [WindowsTypeNT40Display] üzerine yüklenemez." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName], [WindowsTypeNT50Display] üzerine yüklenemez." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName], [WindowsType9XDisplay] üzerine yüklenemez." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="AdvancedSocialBot" Directory_="SHORTCUTDIR" Name="ADVANC~1|Advanced Social Bot" Component_="AdvancedSocialBot.exe" Target="[#AdvancedSocialBot.exe]" Description="Advanced Social Bot" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="AdvancedSocialBot_1" Directory_="DesktopFolder" Name="ADVANC~1|Advanced Social Bot" Component_="AdvancedSocialBot.exe" Target="[#AdvancedSocialBot.exe]" Description="Advanced Social Bot" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>
